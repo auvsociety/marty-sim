@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <scenario>
     <robot name="$(arg robot_name)" fixed="false" self_collisions="false">
+        <!-- PARTS -->
+        
         <base_link name="Vehicle" type="compound" physics="submerged">
             <external_part name="4-hull-holder_visual_4-hull-holder" type="model"
                 physics="submerged" buoyant="true">
@@ -25,11 +27,10 @@
             <external_part name="4-hull_visual_4-hull" type="model" physics="submerged"
                 buoyant="true">
                 <physical>
-                    <thickness value="0.003"/>
                     <mesh filename="meshes/4-hull_visual_4-hull.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
                 </physical>
-                <material name="acrylic" />
+                <material name="acrylic_4_hull" />
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
@@ -47,10 +48,9 @@
                 buoyant="true">
                 <physical>
                     <mesh filename="meshes/6-hull_visual_6-hull.obj" scale="1.0" />
-                    <thickness value="0.003"/>
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
                 </physical>
-                <material name="acrylic" />
+                <material name="acrylic_6_hull" />
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
@@ -79,7 +79,7 @@
                     <mesh filename="meshes/front-weights_visual_front-weights.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
                 </physical>
-                <material name="steel" />
+                <material name="steel_front" />
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
@@ -108,7 +108,7 @@
 
             <external_part name="lb-thruster-case" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/propeller-case.obj" scale="0.5" />
+                    <mesh filename="meshes/rose_thruster_small.obj" scale="0.5" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
                 </physical>
                 <material name="plastic" />
@@ -140,7 +140,7 @@
 
             <external_part name="lb-thruster-case" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/propeller-case.obj" scale="0.5" />
+                    <mesh filename="meshes/rose_thruster_small.obj" scale="0.5" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
                 </physical>
                 <material name="plastic" />
@@ -173,7 +173,7 @@
 
             <external_part name="rb-thruster-case" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/propeller-case.obj" scale="0.5" />
+                    <mesh filename="meshes/rose_thruster_small.obj" scale="0.5" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
                 </physical>
                 <material name="plastic" />
@@ -195,7 +195,7 @@
 
             <external_part name="rf-thruster-case" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/propeller-case.obj" scale="0.5" />
+                    <mesh filename="meshes/rose_thruster_small.obj" scale="0.5" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
                 </physical>
                 <material name="plastic" />
@@ -216,7 +216,7 @@
 
             <external_part name="tl-thruster-case" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/propeller-case.obj" scale="0.5" />
+                    <mesh filename="meshes/rose_thruster_small.obj" scale="0.5" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
                 </physical>
                 <material name="plastic" />
@@ -225,7 +225,7 @@
             </external_part>
             <external_part name="tr-thruster-case" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/propeller-case.obj" scale="0.5" />
+                    <mesh filename="meshes/rose_thruster_small.obj" scale="0.5" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
                 </physical>
                 <material name="plastic" />
@@ -234,7 +234,7 @@
             </external_part>
             <external_part name="tb-thruster-case" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/propeller-case.obj" scale="0.5" />
+                    <mesh filename="meshes/rose_thruster_small.obj" scale="0.5" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
                 </physical>
                 <material name="plastic" />
@@ -243,13 +243,15 @@
             </external_part>
         </base_link>
 
+        <!-- ACTUATORS -->
+
         <actuator name="lb-thruster" type="thruster">
             <link name="Vehicle" />
             <origin rpy="0.0 0.0 2.35619" xyz="0.159142 0.259859 0.037015" />
             <specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="false" />
             <propeller diameter="0.18" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
-                <material name="plastic" />
+                <material name="plastic-t100" />
                 <look name="propeller" />
             </propeller>
         </actuator>
@@ -258,7 +260,7 @@
             <specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="false" />
             <propeller diameter="0.18" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
-                <material name="plastic" />
+                <material name="plastic-t100" />
                 <look name="propeller" />
             </propeller>
             <origin rpy="0.0 0.0 0.785398" xyz="0.159142 -0.272858 0.037015" />
@@ -268,7 +270,7 @@
             <specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="false" />
             <propeller diameter="0.18" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
-                <material name="plastic" />
+                <material name="plastic-t100" />
                 <look name="propeller" />
             </propeller>
             <origin rpy="0.0 0.0 0.785398" xyz="-0.159142 0.259859 0.037015" />
@@ -278,7 +280,7 @@
             <specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="false" />
             <propeller diameter="0.18" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
-                <material name="plastic" />
+                <material name="plastic-t100" />
                 <look name="propeller" />
             </propeller>
             <origin rpy="0.0 0.0 2.35619" xyz="-0.159142 -0.272858 0.037015" />
@@ -288,7 +290,7 @@
             <specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="false" />
             <propeller diameter="0.18" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
-                <material name="plastic" />
+                <material name="plastic-t200" />
                 <look name="propeller" />
             </propeller>
             <origin rpy="0.0 -1.5708 0.0" xyz="0.176579 -0.142436 -0.162222" />
@@ -298,7 +300,7 @@
             <specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="false" />
             <propeller diameter="0.18" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
-                <material name="plastic" />
+                <material name="plastic-t200" />
                 <look name="propeller" />
             </propeller>
             <origin rpy="0.0 -1.5708 0.0" xyz="-0.176579 -0.142436 -0.162222" />
@@ -308,11 +310,48 @@
             <specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="false" />
             <propeller diameter="0.18" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
-                <material name="plastic" />
+                <material name="plastic-t200" />
                 <look name="propeller" />
             </propeller>
             <origin rpy="0.0 -1.5708 0.0" xyz="0 0.272689 -0.162222" />
         </actuator>
+
+        <!-- SENSORS -->
+
+        <sensor name="Pressure" rate="20.0" type="pressure">
+            <!-- <range pressure="10000.0"/> -->
+            <noise pressure="0.1"/>
+            <history samples="1"/>
+            <origin xyz="0.0 0.0 -0.11391" rpy="0.0 0.0 0.0"/>
+            <link name="Vehicle"/>
+            <ros_publisher topic="/emulation/pressure"/>
+        </sensor>
+
+        <sensor name="IMU" type="imu" rate="20.0">
+            <range angular_velocity="10.0 10.0 5.0" linear_acceleration="10.0"/>
+            <noise angle="0.1 0.1 0.5" angular_velocity="0.05" yaw_drift="0.001" linear_acceleration="0.1"/>
+            <history samples="100"/>
+			<link name="Vehicle"/>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 -0.132237 -0.11391"/>
+            <ros_publisher topic="/emulation/imu"/>
+		</sensor>
+
+        <sensor name="PressureGT" rate="20.0" type="pressure">
+            <history samples="1"/>
+            <origin xyz="0.0 0.0 -0.11391" rpy="0.0 0.0 0.0"/>
+            <link name="Vehicle"/>
+            <ros_publisher topic="/diagnostics/pressure"/>
+        </sensor>
+
+        <sensor name="IMUGT" type="imu" rate="20.0">
+            <range angular_velocity="10.0 10.0 5.0" linear_acceleration="10.0"/>
+            <history samples="100"/>
+			<link name="Vehicle"/>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 -0.132237 -0.11391"/>
+            <ros_publisher topic="/diagnostics/imu"/>
+		</sensor>
+
+        <!-- SIMULATOR CONFIG -->
 
         <world_transform rpy="0.0 0.0 10.0" xyz="$(arg robot_position)" />
 
@@ -321,81 +360,3 @@
         <ros_publisher thrusters="/diagnostics/thrusters" />
     </robot>
 </scenario>
-
-<!-- <actuator name="ThrusterSway1" type="thruster">
-<link name="Vehicle"/>
-<origin rpy="0.0 8.742277657347586e-08 4.71238899230957"
-        xyz="-0.649753212928772 0.5576227903366089 0.4540664255619049"/>
-<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true"/>
-<propeller diameter="0.18" right="true">
-    <mesh filename="thruster1.obj" scale="1.0"/>
-    <material name="Neutral"/>
-    <look name="propeller"/>
-</propeller>
-</actuator>
-<actuator name="ThrusterSway2" type="thruster">
-<link name="Vehicle"/>
-<origin rpy="0.0 8.742277657347586e-08 -6276.9013671875"
-        xyz="-0.47404944896698 0.2385958731174469 0.4540838897228241"/>
-<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true"/>
-<propeller diameter="0.18" right="true">
-    <mesh filename="thruster3.obj" scale="1.0"/>
-    <material name="Neutral"/>
-    <look name="propeller"/>
-</propeller>
-</actuator>
-<actuator name="ThrusterSway3" type="thruster">
-<link name="Vehicle"/>
-<origin rpy="-158.6504364013672 0.0007546850829385221 -6274.54638671875"
-        xyz="-0.30475151538848877 0.16621439158916473 0.2528931796550751"/>
-<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true"/>
-<propeller diameter="0.18" right="true">
-    <mesh filename="thruster4.obj" scale="1.0"/>
-    <material name="Neutral"/>
-    <look name="propeller"/>
-</propeller>
-</actuator>
-<actuator name="ThrusterSway4" type="thruster">
-<link name="Vehicle"/>
-<origin rpy="-158.6504364013672 0.0007546850829385221 -6272.9755859375"
-        xyz="-0.6431717276573181 0.16630607843399048 0.25095102190971375"/>
-<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true"/>
-<propeller diameter="0.18" right="true">
-    <mesh filename="thruster5.obj" scale="1.0"/>
-    <material name="Neutral"/>
-    <look name="propeller"/>
-</propeller>
-</actuator>
-<actuator name="ThrusterSway5" type="thruster">
-<link name="Vehicle"/>
-<origin rpy="-158.6504364013672 0.0007546850829385221 -6271.40478515625"
-        xyz="-0.6432207226753235 0.678931474685669 0.25088557600975037"/>
-<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true"/>
-<propeller diameter="0.18" right="true">
-    <mesh filename="thruster6.obj" scale="1.0"/>
-    <material name="Neutral"/>
-    <look name="propeller"/>
-</propeller>
-</actuator>
-<actuator name="ThrusterSway6" type="thruster">
-<link name="Vehicle"/>
-<origin rpy="-158.6504364013672 0.0007546850829385221 -6269.833984375"
-        xyz="-0.3047735095024109 0.678776204586029 0.25088557600975037"/>
-<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true"/>
-<propeller diameter="0.18" right="true">
-    <mesh filename="thruster7.obj" scale="1.0"/>
-    <material name="Neutral"/>
-    <look name="propeller"/>
-</propeller>
-</actuator>
-<actuator name="ThrusterSway7" type="thruster">
-<link name="Vehicle"/>
-<origin rpy="0.0 8.742277657347586e-08 7.853981971740723"
-        xyz="-0.29868084192276 0.5584280490875244 0.4541158974170685"/>
-<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true"/>
-<propeller diameter="0.18" right="true">
-    <mesh filename="thruster2.obj" scale="1.0"/>
-    <material name="Neutral"/>
-    <look name="propeller"/>
-</propeller>
-</actuator> -->
