@@ -50,22 +50,53 @@
 		<look name="yellow" rgb="1.0 0.9 0.0" roughness="0.3"/>
 		<look name="gray" gray="0.3" roughness="0.4" metalness="0.5"/>
 		<look name="seabed" rgb="0.7 0.7 0.5" roughness="0.9"/>
-		<look name="propeller" gray="1.0" roughness="0.3" texture="propeller_tex.png"/>
+		<look name="propeller" gray="1.0" roughness="0.3" texture="textures/propeller_tex.png"/>
 		<look name="duct" gray="0.1" roughness="0.4" metalness="0.5"/>
 		<look name="dark" rgb="0.2 0.15 0.1" roughness="0.6" metalness="0.8"/>
 		<look name="look" gray="0.3" roughness="0.4" metalness="0.5"/>
 		<!--<look name="look" rgb="0.2 0.15 0.1" roughness="0.6" metalness="0.8"/> -->
-		<look name="pipe" rgb="1.0 0.2 0.0" roughness="0.2" metalness="0.3"/> 
+		<look name="pipe" rgb="1.0 0.2 0.0" roughness="0.2" metalness="0.3"/>
+		<look name="pool" gray="0.0" roughness="0.1" texture="textures/dirty_tiles.jpg"/>
+		<look name="orange" rgb="1.0 0.3412 0.2" roughness="0.1"/>
 	</looks>
+	
 	
 	<static name="Bottom" type="plane">
 		<material name="Rock"/>
 		<look name="seabed"/>
 		<world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 40.0"/>
 	</static>
+
+	<static name="Floor" type="plane">
+    		<material name="Neutral"/>
+    		<look name="pool"/>
+    		<world_transform xyz="0 0 3.0" rpy="0.0 0.0 0.0"/>
+	</static>
+
+	<dynamic name="gate" type="model" collision="false" physics="submerged" buoyant="false">
+    		<physical>
+        		<mesh filename="meshes/gate.obj" scale="1.0"/>
+        		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    		</physical>
+    			<material name="steel"/>
+    			<look name="Yellow"/>
+    		<world_transform xyz="5.0 2.0 3.0" rpy="0.0 0.0 0.0"/>
+	</dynamic>
 	
 	<include file="scenarios/marty_auv.scn">
 		<arg name="robot_name" value="marty"/>
 		<arg name="robot_position" value="0.0 0.0 0.0"/>
+
+		<arg name="thrust_coeff_t100" value="0.89"/>
+		<arg name="thrust_coeff_t100_reverse" value="0.625"/>
+		<arg name="torque_coeff_t100" value="0.034"/>
+		<arg name="max_rpm_t100" value="2000"/>
+		<arg name="propeller_dia_t100" value="0.078"/>
+		
+		<arg name="thrust_coeff_t200" value="1.05"/>
+		<arg name="thrust_coeff_t200_reverse" value="0.82"/>
+		<arg name="torque_coeff_t200" value="0.04"/>
+		<arg name="max_rpm_t200" value="2994"/>
+		<arg name="propeller_dia_t200" value="0.078"/>
 	</include>
 </scenario>
