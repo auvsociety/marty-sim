@@ -2,16 +2,24 @@
 import rospy
 import math
 import numpy as np
-from sensor_msgs.msg import FluidPressure
+from sensor_msgs.msg import FluidPressure,Imu
 from std_msgs.msg import Float32MultiArray, Float64MultiArray, Float64
 from geometry_msgs.msg import Vector3, Pose 
 from nav_msgs.msg import Odometry
 import threading
+from geometry_msgs.msg import Vector3
+from sensor_msgs.msg import Imu
+import math
 
+StartPos = Vector3()
 
 GATE_POS = (5, 2, 2.48)
 
 # publishers
+anglePub= rospy.Publisher("/emulation/orientation", Vector3, queue_size=1)
+diagAnglePub = rospy.Publisher("/diagnostics/orientation", Vector3, queue_size=1)
+
+
 depth_pub = rospy.Publisher("/depth_data", Float64, queue_size=1)
 depth_data = Float64()
 
@@ -117,12 +125,115 @@ def report_gate_pos_thread():
         report_gate_pos()
         rate.sleep()
 
+def convertBecauseRoshanIsLazy(shit):
+    angles = Vector3()
+    # Import the necessary libraries
+    # Function to convert quaternion to Euler angles
+    def quaternion_to_euler(orientation):
+        # Extract the quaternion components
+        x = orientation.x
+        y = orientation.y
+        z = orientation.z
+        w = orientation.w
+
+        """
+        Convert a quaternion into euler angles (roll, pitch, yaw)
+        roll is rotation around x in radians (counterclockwise)
+        pitch is rotation around y in radians (counterclockwise)
+        yaw is rotation around z in radians (counterclockwise)
+        """
+        t0 = +2.0 * (w * x + y * z)
+        t1 = +1.0 - 2.0 * (x * x + y * y)
+        roll_x = math.atan2(t0, t1)
+     
+        t2 = +2.0 * (w * y - z * x)
+        t2 = +1.0 if t2 > +1.0 else t2
+        t2 = -1.0 if t2 < -1.0 else t2
+        pitch_y = math.asin(t2)
+     
+        t3 = +2.0 * (w * z + x * y)
+        t4 = +1.0 - 2.0 * (y * y + z * z)
+        yaw_z = math.atan2(t3, t4)
+     
+        roll = math.degrees(roll_x)
+        pitch = math.degrees(pitch_y)
+        yaw = math.degrees(yaw_z)
+        
+        return Vector3(roll, pitch, yaw)
+
+    # Subscriber callback function for IMU data
+
+    # Unpack the quaternion data from the IMU message
+    quaternion = shit.orientation
+
+    # Convert quaternion to Euler angles
+    angles = quaternion_to_euler(quaternion)
+    angles_msg = Vector3()
+    angles_msg.x = angles.x
+    angles_msg.y = angles.y
+    angles_msg.z = angles.z
+
+    anglePub.publish(angles_msg)
+
+def convertBecauseRoshanIsLazyDiag(shit):
+    angles = Vector3()
+    # Import the necessary libraries
+    # Function to convert quaternion to Euler angles
+    def quaternion_to_euler(orientation):
+        # Extract the quaternion components
+        x = orientation.x
+        y = orientation.y
+        z = orientation.z
+        w = orientation.w
+
+        """
+        Convert a quaternion into euler angles (roll, pitch, yaw)
+        roll is rotation around x in radians (counterclockwise)
+        pitch is rotation around y in radians (counterclockwise)
+        yaw is rotation around z in radians (counterclockwise)
+        """
+        t0 = +2.0 * (w * x + y * z)
+        t1 = +1.0 - 2.0 * (x * x + y * y)
+        roll_x = math.atan2(t0, t1)
+     
+        t2 = +2.0 * (w * y - z * x)
+        t2 = +1.0 if t2 > +1.0 else t2
+        t2 = -1.0 if t2 < -1.0 else t2
+        pitch_y = math.asin(t2)
+     
+        t3 = +2.0 * (w * z + x * y)
+        t4 = +1.0 - 2.0 * (y * y + z * z)
+        yaw_z = math.atan2(t3, t4)
+     
+        roll = math.degrees(roll_x)
+        pitch = math.degrees(pitch_y)
+        yaw = math.degrees(yaw_z)
+        
+        return Vector3(roll, pitch, yaw)
+
+    # Subscriber callback function for IMU data
+
+    # Unpack the quaternion data from the IMU message
+    quaternion = shit.orientation
+
+    # Convert quaternion to Euler angles
+    angles = quaternion_to_euler(quaternion)
+    angles_msg = Vector3()
+    angles_msg.x = angles.x
+    angles_msg.y = angles.y
+    angles_msg.z = angles.z
+
+    diagAnglePub.publish(angles_msg)
+
+
 
 # subscribers
 thrust_response = rospy.Subscriber("/rose_tvmc/thrust", Float32MultiArray, on_thrust)
 depth_response = rospy.Subscriber("/emulation/pressure", FluidPressure, on_depth)
 hull_front = rospy.Subscriber("/diagnostics/hull_front", Odometry, on_hull_front)
 hull_back = rospy.Subscriber("/diagnostics/hull_back", Odometry, on_hull_back)
+angSub = rospy.Subscriber("/emulation/imu", Imu,convertBecauseRoshanIsLazy)
+diagAngSub = rospy.Subscriber("/diagnostics/imu", Imu,convertBecauseRoshanIsLazyDiag)
 
 
 if __name__ == "__main__":

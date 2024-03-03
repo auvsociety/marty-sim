@@ -411,7 +411,7 @@
 
         <!-- SIMULATOR CONFIG -->
 
-        <world_transform rpy="0.0 0.0 10.0" xyz="$(arg robot_position)" />
+        <world_transform rpy="$(arg robot_orientation)" xyz="$(arg robot_position)" />
 
         <ros_base_link_transforms publish="true" />
         <ros_subscriber thrusters="/control/thrusters" />

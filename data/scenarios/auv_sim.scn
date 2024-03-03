@@ -56,8 +56,6 @@
 	
 	<include file="scenarios/marty_auv.scn">
 		<arg name="robot_name" value="MARTY 2.0"/>
-		<arg name="robot_position" value="0.0 0.0 1.0"/>
+		<arg name="robot_position" value="15.0 2.0 1.0"/>
 	</include>
 </scenario>
-
-
