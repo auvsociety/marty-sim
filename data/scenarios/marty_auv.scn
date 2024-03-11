@@ -396,7 +396,7 @@
         <sensor name="hull_front" rate="20.0" type="odometry">
             <noise ned_position="0.0"/>
             <history samples="1"/>
-            <origin xyz="-0.000002 0.28 0.11391" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0 0.28 0.11391" rpy="0.0 0.0 0.0"/>
             <link name="Vehicle"/>
             <ros_publisher topic="/diagnostics/hull_front"/>
         </sensor>
@@ -404,11 +404,18 @@
         <sensor name="hull_back" rate="20.0" type="odometry">
             <noise ned_position="0.0"/>
             <history samples="1"/>
-            <origin xyz="-0.000002 0.0237 0.11391" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0 0.0237 0.11391" rpy="0.0 0.0 0.0"/>
             <link name="Vehicle"/>
             <ros_publisher topic="/diagnostics/hull_back"/>
         </sensor>
 
+        <sensor name="hull_back_right" rate="20.0" type="odometry">
+            <noise ned_position="0.0"/>
+            <history samples="1"/>
+            <origin xyz="1 0.0237 0.11391" rpy="0.0 0.0 0.0"/>
+            <link name="Vehicle"/>
+            <ros_publisher topic="/diagnostics/hull_back_right"/>
+        </sensor>
         <!-- SIMULATOR CONFIG -->
 
         <world_transform rpy="$(arg robot_orientation)" xyz="$(arg robot_position)" />
