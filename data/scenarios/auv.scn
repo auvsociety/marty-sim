@@ -93,18 +93,18 @@
 		<world_transform xyz="0.0 0.0 3.0" rpy="0.0 0.0 0.0"/>
 	</dynamic> -->
 
-	<dynamic name="flare" type="cylinder" physics="surface">
+	<!-- <dynamic name="flare" type="cylinder" physics="surface">
 		<dimensions radius="0.075" height="1.5"/>
 		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
 		<material name="Steel"/>
 		<look name="Yellow"/>
 		<world_transform xyz="5.0 4.0 3.0" rpy="0.0 0.0 0.0"/>
-	</dynamic>
+	</dynamic> -->
 
 	<include file="scenarios/marty_auv.scn">
 		<arg name="robot_name" value="marty"/>
-		<arg name="robot_orientation" value="0.0 0.0 -1.5"/>
-		<arg name="robot_position" value="6.0 5.0 0.0"/>
+		<arg name="robot_orientation" value="0.0 0.0 -1.0"/>
+		<arg name="robot_position" value="5.0 6.0 0.0"/>
 
 		<arg name="thrust_coeff_t100" value="0.89"/>
 		<arg name="thrust_coeff_t100_reverse" value="0.625"/>
