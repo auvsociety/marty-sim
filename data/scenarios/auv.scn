@@ -57,6 +57,7 @@
 		<!--<look name="look" rgb="0.2 0.15 0.1" roughness="0.6" metalness="0.8"/> -->
 		<look name="pipe" rgb="1.0 0.2 0.0" roughness="0.2" metalness="0.3"/>
 		<look name="pool" gray="0.0" roughness="0.1" texture="textures/dirty_tiles.jpg"/>
+		<look name="charuco_board" gray="0.0" roughness="0.1" texture="textures/dirty_tiles.jpg"/>
 		<look name="orange" rgb="1.0 0.3412 0.2" roughness="0.1"/>
 	</looks>
 	

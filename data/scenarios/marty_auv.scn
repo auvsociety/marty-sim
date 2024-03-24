@@ -393,6 +393,17 @@
             <ros_publisher topic="/diagnostics/imu"/>
 		</sensor>
 
+        <sensor name="DVL" rate="10.0" type="dvl">
+            <specs beam_angle="30.0" beam_positive_z="false"/>
+            <range velocity="10.0 10.0 5.0" altitude_min="0.5" altitude_max="50.0"/>
+            <water_layer minimum_layer_size="10.0" boundary_near="10.0" boundary_far="30.0"/>
+            <noise velocity_percent= "0.3" velocity="0.1" altitude="0.03" water_velocity_percent="0.1" water_velocity="0.1"/>
+            <history samples="1"/>
+            <origin xyz="0.0 0.075 0.05" rpy="0.0 0.0 0.0"/>
+            <link name="Vehicle"/>
+            <ros_publisher topic="/diagnostics/dvl"/>
+        </sensor>
+
         <sensor name="hull_front" rate="20.0" type="odometry">
             <noise ned_position="0.0"/>
             <history samples="1"/>
@@ -415,6 +426,13 @@
             <origin xyz="1 0.0237 0.11391" rpy="0.0 0.0 0.0"/>
             <link name="Vehicle"/>
             <ros_publisher topic="/diagnostics/hull_back_right"/>
+        </sensor>
+
+        <sensor name="Camera" rate="30.0" type="camera">
+            <specs resolution_x="1280" resolution_y="720" horizontal_fov="61.24     "/>
+            <origin xyz="0.0 0.075 0.05" rpy="0.0 0.0 0.0"/>
+            <link name="Vehicle"/>
+            <ros_publisher topic="/emulation/camera"/>
         </sensor>
         <!-- SIMULATOR CONFIG -->
 

@@ -18,11 +18,10 @@ FLARE_POS = (5, 4, 2.25)
 
 # publishers
 orientation_pub = rospy.Publisher("/emulation/orientation", Vector3, queue_size=1)
-actual_orientation_pub = rospy.Publisher(
-    "/diagnostics/orientation", Vector3, queue_size=1
-)
+actual_orientation_pub = rospy.Publisher("/diagnostics/orientation", Vector3, queue_size=1)
 
-depth_pub = rospy.Publisher("/depth_data", Float64, queue_size=1)
+
+depth_pub = rospy.Publisher("/emulation/depth", Float64, queue_size=1)
 depth_data = Float64()
 
 thrust_control = rospy.Publisher("/control/thrusters", Float64MultiArray, queue_size=1)
