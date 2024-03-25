@@ -324,7 +324,7 @@ def quaternion_to_euler(orientation):
     pitch = math.degrees(pitch_y)
     yaw = math.degrees(yaw_z)
 
-    return Vector3(roll, pitch, yaw)
+    return Vector3(pitch, roll, yaw)
 
 
 def on_imu(imu: Imu):
