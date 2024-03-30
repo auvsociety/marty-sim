@@ -3,7 +3,7 @@ import rospy
 import math
 import numpy as np
 from sensor_msgs.msg import FluidPressure, Imu
-from std_msgs.msg import Float32MultiArray, Float64MultiArray, Float64
+from std_msgs.msg import Float32MultiArray, Float64MultiArray, Float32
 from geometry_msgs.msg import Vector3, Pose
 from nav_msgs.msg import Odometry
 import threading
@@ -21,8 +21,8 @@ orientation_pub = rospy.Publisher("/emulation/orientation", Vector3, queue_size=
 actual_orientation_pub = rospy.Publisher("/diagnostics/orientation", Vector3, queue_size=1)
 
 
-depth_pub = rospy.Publisher("/emulation/depth", Float64, queue_size=1)
-depth_data = Float64()
+depth_pub = rospy.Publisher("/emulation/depth", Float32, queue_size=1)
+depth_data = Float32()
 
 thrust_control = rospy.Publisher("/control/thrusters", Float64MultiArray, queue_size=1)
 thrust_control_data = Float64MultiArray()

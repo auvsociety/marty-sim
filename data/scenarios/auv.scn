@@ -3,11 +3,17 @@
 	<environment>
 		<ned latitude="40.0" longitude="3.0"/>
 		<ocean>
-			<water density="1025.0" jerlov="0"/>
+			<water density="1025.0" jerlov="0.22"/>
 			<waves height="0.0"/>
-			<current type="uniform">
-				<velocity xyz="0.0 0.0 0.0"/>
+			<particles enabled="false"/>
+			<!-- <current type="uniform">
+				<velocity xyz="0.1 0.0 0.0"/>
 			</current>
+			<current type="jet">
+				<center xyz="0.0 0.0 3.0"/>
+				<outlet radius="0.2"/>
+				<velocity xyz="0.0 0.2 0.0"/>
+			</current> -->
 
 		</ocean>
 		<atmosphere>
@@ -74,15 +80,15 @@
     		<world_transform xyz="0 0 3.0" rpy="0.0 0.0 0.0"/>
 	</static>
 
-	<dynamic name="gate" type="model" collision="false" physics="submerged" buoyant="false">
+	<static name="gate" type="model" collision="false">
     		<physical>
         		<mesh filename="meshes/gate.obj" scale="1.0"/>
         		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
     		</physical>
     			<material name="steel"/>
     			<look name="Yellow"/>
-    		<world_transform xyz="5.0 2.0 3.0" rpy="0.0 0.0 0.0"/>
-	</dynamic>
+    		<world_transform xyz="5.0 2.0 0" rpy="0.0 0.0 0.0"/>
+	</static>
 	
 	<!-- <dynamic name="Flare" type="model" collision="false" physics="submerged" buoyant="false">
 		<physical>
@@ -104,17 +110,22 @@
 
 	<include file="scenarios/marty_auv.scn">
 		<arg name="robot_name" value="marty"/>
-		<arg name="robot_orientation" value="0.0 0.0 -1.0"/>
-		<arg name="robot_position" value="5.0 6.0 0.0"/>
+		<arg name="robot_orientation" value="0.0 0.0 0.3"/>
+		<arg name="robot_position" value="5.0 13.0 0.0"/>
 
-		<arg name="thrust_coeff_t100" value="0.89"/>
-		<arg name="thrust_coeff_t100_reverse" value="0.625"/>
+		<arg name="thrust_coeff_t100" value="1"/>
+		<arg name="thrust_coeff_t100_reverse" value="1"/>
+
+		<!-- <arg name="thrust_coeff_t100" value="0.89"/> -->
+		<!-- <arg name="thrust_coeff_t100_reverse" value="0.89"/> -->
+		<!-- <arg name="thrust_coeff_t100_reverse" value="0.625"/> -->
 		<arg name="torque_coeff_t100" value="0.034"/>
-		<arg name="max_rpm_t100" value="2000"/>
+		<arg name="max_rpm_t100" value="2500"/>
 		<arg name="propeller_dia_t100" value="0.078"/>
 		
 		<arg name="thrust_coeff_t200" value="1.05"/>
-		<arg name="thrust_coeff_t200_reverse" value="0.82"/>
+		<arg name="thrust_coeff_t200_reverse" value="1.05"/>
+		<!-- <arg name="thrust_coeff_t200_reverse" value="0.82"/> -->
 		<arg name="torque_coeff_t200" value="0.04"/>
 		<arg name="max_rpm_t200" value="2994"/>
 		<arg name="propeller_dia_t200" value="0.078"/>

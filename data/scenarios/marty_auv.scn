@@ -2,10 +2,9 @@
 <scenario>
     <robot name="$(arg robot_name)" fixed="false" self_collisions="false">
         <!-- PARTS -->
-        
+
         <base_link name="Vehicle" type="compound" physics="submerged">
-            <external_part name="4-hull-holder_visual_4-hull-holder" type="model"
-                physics="submerged" buoyant="true">
+            <external_part name="4-hull-holder_visual_4-hull-holder" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/4-hull-holder_visual_4-hull-holder.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -14,8 +13,7 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="4-hull-support_visual_4-hull-support" type="model"
-                physics="submerged" buoyant="true">
+            <external_part name="4-hull-support_visual_4-hull-support" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/4-hull-support_visual_4-hull-support.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -24,8 +22,7 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="4-hull_visual_4-hull" type="model" physics="submerged"
-                buoyant="true">
+            <external_part name="4-hull_visual_4-hull" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/4-hull_visual_4-hull.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -34,8 +31,7 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="6-hull-holder_visual_6-hull-holder" type="model"
-                physics="submerged" buoyant="true">
+            <external_part name="6-hull-holder_visual_6-hull-holder" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/6-hull-holder_visual_6-hull-holder.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -44,8 +40,7 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="6-hull_visual_6-hull" type="model" physics="submerged"
-                buoyant="true">
+            <external_part name="6-hull_visual_6-hull" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/6-hull_visual_6-hull.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -54,8 +49,7 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="back-weights_visual_back-weights" type="model" physics="submerged"
-                buoyant="true">
+            <external_part name="back-weights_visual_back-weights" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/back-weights_visual_back-weights.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -73,8 +67,7 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="front-weights_visual_front-weights" type="model"
-                physics="submerged" buoyant="true">
+            <external_part name="front-weights_visual_front-weights" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/front-weights_visual_front-weights.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -83,8 +76,7 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="hullrack_visual_hullrack" type="model" physics="submerged"
-                buoyant="true">
+            <external_part name="hullrack_visual_hullrack" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/hullrack_visual_hullrack.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -93,11 +85,9 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="lb-thruster-mount_visual_lb-thruster-mount" type="model"
-                physics="submerged" buoyant="true">
+            <external_part name="lb-thruster-mount_visual_lb-thruster-mount" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/lb-thruster-mount_visual_lb-thruster-mount.obj"
-                        scale="1.0" />
+                    <mesh filename="meshes/lb-thruster-mount_visual_lb-thruster-mount.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
                 </physical>
                 <material name="aluminium" />
@@ -115,8 +105,7 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 2.35619" xyz="0.159142 0.259859 0.037015" />
             </external_part>
-            <external_part name="left-frame_visual_left-frame" type="model" physics="submerged"
-                buoyant="true">
+            <external_part name="left-frame_visual_left-frame" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/left-frame_visual_left-frame.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -125,11 +114,9 @@
                 <look name="orange" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="lf-thruster-mount_visual_lf-thruster-mount" type="model"
-                physics="submerged" buoyant="true">
+            <external_part name="lf-thruster-mount_visual_lf-thruster-mount" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/lf-thruster-mount_visual_lf-thruster-mount.obj"
-                        scale="1.0" />
+                    <mesh filename="meshes/lf-thruster-mount_visual_lf-thruster-mount.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
                 </physical>
                 <material name="aluminium" />
@@ -148,8 +135,7 @@
                 <compound_transform rpy="0.0 0.0 0.785398" xyz="0.159142 -0.272858 0.037015" />
             </external_part>
 
-            <external_part name="pitchrack_visual_pitchrack" type="model" physics="submerged"
-                buoyant="true">
+            <external_part name="pitchrack_visual_pitchrack" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/pitchrack_visual_pitchrack.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -158,11 +144,9 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
             </external_part>
-            <external_part name="rb-thruster-mount_visual_rb-thruster-mount" type="model"
-                physics="submerged" buoyant="true">
+            <external_part name="rb-thruster-mount_visual_rb-thruster-mount" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/rb-thruster-mount_visual_rb-thruster-mount.obj"
-                        scale="1.0" />
+                    <mesh filename="meshes/rb-thruster-mount_visual_rb-thruster-mount.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
                 </physical>
                 <material name="aluminium" />
@@ -180,11 +164,9 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 0.785398" xyz="-0.159142 0.259859 0.037015" />
             </external_part>
-            <external_part name="rf-thruster-mount_visual_rf-thruster-mount" type="model"
-                physics="submerged" buoyant="true">
+            <external_part name="rf-thruster-mount_visual_rf-thruster-mount" type="model" physics="submerged" buoyant="true">
                 <physical>
-                    <mesh filename="meshes/rf-thruster-mount_visual_rf-thruster-mount.obj"
-                        scale="1.0" />
+                    <mesh filename="meshes/rf-thruster-mount_visual_rf-thruster-mount.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
                 </physical>
                 <material name="aluminium" />
@@ -202,8 +184,7 @@
                 <look name="look" />
                 <compound_transform rpy="0.0 0.0 2.35619" xyz="-0.159142 -0.272858 0.037015" />
             </external_part>
-            <external_part name="right-frame_visual_right-frame" type="model" physics="submerged"
-                buoyant="true">
+            <external_part name="right-frame_visual_right-frame" type="model" physics="submerged" buoyant="true">
                 <physical>
                     <mesh filename="meshes/right-frame_visual_right-frame.obj" scale="1.0" />
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0" />
@@ -248,13 +229,7 @@
         <actuator name="lb-thruster" type="thruster">
             <link name="Vehicle" />
             <origin rpy="0.0 0.0 2.35619" xyz="0.159142 0.259859 0.037015" />
-            <specs 
-                thrust_coeff="$(arg thrust_coeff_t100)"
-                thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)"
-                torque_coeff="$(arg torque_coeff_t100)"
-                max_rpm="$(arg max_rpm_t100)"
-                inverted="false"
-            />
+            <specs thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t100)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t100" />
@@ -263,13 +238,7 @@
         </actuator>
         <actuator name="lf-thruster" type="thruster">
             <link name="Vehicle" />
-            <specs 
-                thrust_coeff="$(arg thrust_coeff_t100)"
-                thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)"
-                torque_coeff="$(arg torque_coeff_t100)"
-                max_rpm="$(arg max_rpm_t100)"
-                inverted="false"
-            />
+            <specs thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t100)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t100" />
@@ -279,13 +248,7 @@
         </actuator>
         <actuator name="rb-thruster" type="thruster">
             <link name="Vehicle" />
-            <specs 
-                thrust_coeff="$(arg thrust_coeff_t100)"
-                thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)"
-                torque_coeff="$(arg torque_coeff_t100)"
-                max_rpm="$(arg max_rpm_t100)"
-                inverted="false"
-            />
+            <specs thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t100)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t100" />
@@ -295,13 +258,7 @@
         </actuator>
         <actuator name="rf-thruster" type="thruster">
             <link name="Vehicle" />
-            <specs 
-                thrust_coeff="$(arg thrust_coeff_t100)"
-                thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)"
-                torque_coeff="$(arg torque_coeff_t100)"
-                max_rpm="$(arg max_rpm_t100)"
-                inverted="false"
-            />
+            <specs thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t100)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t100" />
@@ -311,13 +268,7 @@
         </actuator>
         <actuator name="tl-thruster" type="thruster">
             <link name="Vehicle" />
-            <specs 
-                thrust_coeff="$(arg thrust_coeff_t200)"
-                thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)"
-                torque_coeff="$(arg torque_coeff_t200)"
-                max_rpm="$(arg max_rpm_t200)"
-                inverted="false"
-            />
+            <specs thrust_coeff="$(arg thrust_coeff_t200)" thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)" torque_coeff="$(arg torque_coeff_t200)" max_rpm="$(arg max_rpm_t200)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t200)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t200" />
@@ -327,13 +278,7 @@
         </actuator>
         <actuator name="tr-thruster" type="thruster">
             <link name="Vehicle" />
-            <specs 
-                thrust_coeff="$(arg thrust_coeff_t200)"
-                thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)"
-                torque_coeff="$(arg torque_coeff_t200)"
-                max_rpm="$(arg max_rpm_t200)"
-                inverted="false"
-            />
+            <specs thrust_coeff="$(arg thrust_coeff_t200)" thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)" torque_coeff="$(arg torque_coeff_t200)" max_rpm="$(arg max_rpm_t200)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t200)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t200" />
@@ -343,13 +288,7 @@
         </actuator>
         <actuator name="tb-thruster" type="thruster">
             <link name="Vehicle" />
-            <specs 
-                thrust_coeff="$(arg thrust_coeff_t200)"
-                thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)"
-                torque_coeff="$(arg torque_coeff_t200)"
-                max_rpm="$(arg max_rpm_t200)"
-                inverted="false"
-            />
+            <specs thrust_coeff="$(arg thrust_coeff_t200)" thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)" torque_coeff="$(arg torque_coeff_t200)" max_rpm="$(arg max_rpm_t200)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t200)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t200" />
@@ -373,10 +312,10 @@
             <range angular_velocity="10.0 10.0 5.0" linear_acceleration="10.0"/>
             <noise angle="0.1 0.1 0.5" angular_velocity="0.05" yaw_drift="0.001" linear_acceleration="0.1"/>
             <history samples="100"/>
-			<link name="Vehicle"/>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 -0.132237 -0.11391"/>
+            <link name="Vehicle"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.132237 -0.11391"/>
             <ros_publisher topic="/emulation/imu"/>
-		</sensor>
+        </sensor>
 
         <sensor name="PressureGT" rate="20.0" type="pressure">
             <history samples="1"/>
@@ -388,10 +327,10 @@
         <sensor name="IMUGT" type="imu" rate="20.0">
             <range angular_velocity="10.0 10.0 5.0" linear_acceleration="10.0"/>
             <history samples="100"/>
-			<link name="Vehicle"/>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 -0.132237 -0.11391"/>
+            <link name="Vehicle"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.132237 -0.11391"/>
             <ros_publisher topic="/diagnostics/imu"/>
-		</sensor>
+        </sensor>
 
         <sensor name="DVL" rate="10.0" type="dvl">
             <specs beam_angle="30.0" beam_positive_z="false"/>
@@ -432,7 +371,14 @@
             <specs resolution_x="1280" resolution_y="720" horizontal_fov="61.24     "/>
             <origin xyz="0.0 0.075 0.05" rpy="0.0 0.0 0.0"/>
             <link name="Vehicle"/>
-            <ros_publisher topic="/emulation/camera"/>
+            <ros_publisher topic="/emulation/camera/down"/>
+        </sensor>
+
+        <sensor name="Camera" rate="30.0" type="camera">
+            <specs resolution_x="640" resolution_y="360" horizontal_fov="71.4"/>
+            <origin xyz="0.0 -0.272858 0.00" rpy="1.57 0.0 0.0"/>
+            <link name="Vehicle"/>
+            <ros_publisher topic="/emulation/camera/front"/>
         </sensor>
         <!-- SIMULATOR CONFIG -->
 
