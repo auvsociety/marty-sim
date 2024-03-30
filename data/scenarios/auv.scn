@@ -53,7 +53,7 @@
 	</materials>
 	
 	<looks>
-		<look name="yellow" rgb="1.0 0.9 0.0" roughness="0.3"/>
+		<!-- <look name="yellow" rgb="1.0 0.9 0.0" roughness="0.3"/> -->
 		<look name="gray" gray="0.3" roughness="0.4" metalness="0.5"/>
 		<look name="seabed" rgb="0.7 0.7 0.5" roughness="0.9"/>
 		<look name="propeller" gray="1.0" roughness="0.3" texture="textures/propeller_tex.png"/>
@@ -64,7 +64,10 @@
 		<look name="pipe" rgb="1.0 0.2 0.0" roughness="0.2" metalness="0.3"/>
 		<look name="pool" gray="0.0" roughness="0.1" texture="textures/dirty_tiles.jpg"/>
 		<look name="charuco_board" gray="0.0" roughness="0.1" texture="textures/dirty_tiles.jpg"/>
-		<look name="orange" rgb="1.0 0.3412 0.2" roughness="0.1"/>
+		<look name="orange" gray="0.0" roughness="0.1" texture="textures/orange.jpg"/>
+		<look name="blue" gray="0.0" roughness="0.1" texture="textures/blue.jpg"/>
+		<look name="red" gray="0.0" roughness="0.1" texture="textures/red.jpg"/>
+		<look name="yellow" gray="0.0" roughness="0.1" texture="textures/yellow.jpg"/>
 	</looks>
 	
 	
@@ -74,44 +77,14 @@
 		<world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 40.0"/>
 	</static>
 
-	<static name="Floor" type="plane">
-    		<material name="Neutral"/>
-    		<look name="pool"/>
-    		<world_transform xyz="0 0 3.0" rpy="0.0 0.0 0.0"/>
-	</static>
-
-	<static name="gate" type="model" collision="false">
-    		<physical>
-        		<mesh filename="meshes/gate.obj" scale="1.0"/>
-        		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-    		</physical>
-    			<material name="steel"/>
-    			<look name="Yellow"/>
-    		<world_transform xyz="5.0 2.0 0" rpy="0.0 0.0 0.0"/>
-	</static>
 	
-	<!-- <dynamic name="Flare" type="model" collision="false" physics="submerged" buoyant="false">
-		<physical>
-			<mesh filename="meshes/Flare.obj" scale="10.0"/>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-		</physical>
-			<material name="steel"/>
-			<look name="Yellow"/>
-		<world_transform xyz="0.0 0.0 3.0" rpy="0.0 0.0 0.0"/>
-	</dynamic> -->
 
-	<!-- <dynamic name="flare" type="cylinder" physics="surface">
-		<dimensions radius="0.075" height="1.5"/>
-		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-		<material name="Steel"/>
-		<look name="Yellow"/>
-		<world_transform xyz="5.0 4.0 3.0" rpy="0.0 0.0 0.0"/>
-	</dynamic> -->
+	
 
 	<include file="scenarios/marty_auv.scn">
 		<arg name="robot_name" value="marty"/>
 		<arg name="robot_orientation" value="0.0 0.0 0.3"/>
-		<arg name="robot_position" value="5.0 13.0 0.0"/>
+		<arg name="robot_position" value="-12 12.5 0"/>
 
 		<arg name="thrust_coeff_t100" value="1"/>
 		<arg name="thrust_coeff_t100_reverse" value="1"/>
@@ -130,4 +103,24 @@
 		<arg name="max_rpm_t200" value="2994"/>
 		<arg name="propeller_dia_t200" value="0.078"/>
 	</include>
+
+	<include file="scenarios/main_arena.scn">
+	<!-- change only x co-ordinate considering center of pool as the origin -->
+	<!-- may vary the x from -15 to 25 -->	
+		<arg name="task_gate_coord" value="-12 -0.5 2"/>
+
+	<!-- may vary the x from -15 to 25 -->
+	<!-- may vary the y axis from 4.5 to 8.5 -->
+		<arg name="flare_coord" value="-12 5.0 2"/>
+		
+	<!-- x may vary from -15 to 25 -->
+		<arg name="start_area_coord" value="-12 12.5 0"/>
+	</include>
+
+	<!-- include for qualification -->
+
+	<!-- <include file="scenarios/qualification_arena.scn">
+		<arg name="qual_gate_coord" value="0 0 1.8"/>
+	</include> -->
+
 </scenario>
