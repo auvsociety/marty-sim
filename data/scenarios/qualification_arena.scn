@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<scenario>
+	<static name="qualification_gate" type="model" collision="false">
+		<physical>
+			<mesh filename="meshes/gate.obj" scale="1.0" />
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+		</physical>
+		<material name="steel" />
+		<look name="Yellow" />
+		<world_transform xyz="$(qual_gate_coord)" rpy="0.0 3.14 0.0" />
+	</static>
+
+</scenario>

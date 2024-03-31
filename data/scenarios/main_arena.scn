@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<scenario>
+	<static name="Floor" type="plane">
+		<material name="Neutral"/>
+		<look name="pool"/>
+		<world_transform xyz="0 0 2.0" rpy="0.0 0.0 0.0"/>
+	</static>
+	<!-- may vary the x from -15 to 25 -->
+	<static name="task_gate" type="model" collision="false">
+		<physical>
+			<mesh filename="meshes/task_gate.obj" scale="1.0" />
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+		</physical>
+		<material name="steel" />
+		<look name="Yellow" />
+		<world_transform xyz="$(arg task_gate_coord)" rpy="0.0 3.14 0.0" />
+	</static>
+
+	<!-- may vary the y axis from -4.5 to -8.5 -->
+	<!-- may vary the x from -15 to 25 -->
+	<dynamic name="flare" type="cylinder" physics="surface">
+		<dimensions radius="0.075" height="1.5"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+		<material name="Steel"/>
+		<look name="orange"/>
+		<world_transform xyz="$(arg flare_coord)" rpy="0.0 0.0 0.0"/>
+	</dynamic>
+
+	<static name="bucket" type="model" collision="false">
+		<physical>
+			<mesh filename="meshes/tub.obj" scale="1.0" />
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+		</physical>
+		<material name="steel" />
+		<look name="red" />
+		<world_transform xyz="2.5 -11.5 1.7" rpy="0.0 3.14 0.0" />
+	</static>
+
+	<static name="bucket" type="model" collision="false">
+		<physical>
+			<mesh filename="meshes/tub.obj" scale="1.0" />
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+		</physical>
+		<material name="steel" />
+		<look name="red" />
+		<world_transform xyz="0.0 -11.5 1.7" rpy="0.0 3.14 0.0" />
+	</static>
+
+	<static name="bucket" type="model" collision="false">
+		<physical>
+			<mesh filename="meshes/tub.obj" scale="1.0" />
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+		</physical>
+		<material name="steel" />
+		<look name="red" />
+		<world_transform xyz="-2.5 -11.5 1.7" rpy="0.0 3.14 0.0" />
+	</static>
+
+	<static name="bucket" type="model" collision="false">
+		<physical>
+			<mesh filename="meshes/tub.obj" scale="1.0" />
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+		</physical>
+		<material name="steel" />
+		<look name="blue" />
+		<world_transform xyz="-5 -11.5 1.7" rpy="0.0 3.14 0.0" />
+	</static>
+	<!-- starting area causing hoe issues -->
+	<!-- <dynamic name="starting area" type="model" collision="false">
+		<physical>
+			<mesh filename="meshes/starting_area.obj" scale="1.0" />
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+		</physical>
+		<material name="steel" />
+		<look name="Yellow" />
+		<world_transform xyz="$(arg start_area_coord)" rpy="0.0 0 1.57" />
+	</dynamic> -->
+
+	<dynamic name="yellow flare" type="cylinder" physics="surface">
+		<dimensions radius="0.075" height="1.5"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+		<material name="Steel"/>
+		<look name="yellow"/>
+		<world_transform xyz="20 -8 2" rpy="0.0 0.0 0.0"/>
+	</dynamic>
+
+	<dynamic name="blue flare" type="cylinder" physics="surface">
+		<dimensions radius="0.075" height="1.5"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+		<material name="Steel"/>
+		<look name="red"/>
+		<world_transform xyz="19 -5 2" rpy="0.0 0.0 0.0"/>
+	</dynamic>
+
+	<dynamic name="red flare" type="cylinder" physics="surface">
+		<dimensions radius="0.075" height="1.5"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+		<material name="Steel"/>
+		<look name="blue"/>
+		<world_transform xyz="18 -2 2" rpy="0.0 0.0 0.0"/>
+	</dynamic>
+
+</scenario>
