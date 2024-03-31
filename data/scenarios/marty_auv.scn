@@ -378,7 +378,7 @@
             <specs resolution_x="640" resolution_y="360" horizontal_fov="71.4"/>
             <origin xyz="0.0 -0.272858 0.00" rpy="1.57 0.0 0.0"/>
             <link name="Vehicle"/>
-            <ros_publisher topic="/emulation/camera/front"/>
+            <ros_publisher topic="/oak/rgb/image_raw"/>
         </sensor>
         <!-- SIMULATOR CONFIG -->
 

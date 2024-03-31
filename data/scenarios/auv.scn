@@ -110,7 +110,7 @@
 
 	<include file="scenarios/marty_auv.scn">
 		<arg name="robot_name" value="marty"/>
-		<arg name="robot_orientation" value="0.0 0.0 0.3"/>
+		<arg name="robot_orientation" value="0.0 0.0 0.2"/>
 		<arg name="robot_position" value="5.0 13.0 0.0"/>
 
 		<arg name="thrust_coeff_t100" value="1"/>
