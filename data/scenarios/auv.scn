@@ -3,7 +3,7 @@
 	<environment>
 		<ned latitude="40.0" longitude="3.0"/>
 		<ocean>
-			<water density="1025.0" jerlov="0.22"/>
+			<water density="1025.0" jerlov="0.1"/>
 			<waves height="0.0"/>
 			<particles enabled="false"/>
 			<!-- <current type="uniform">
@@ -17,7 +17,7 @@
 
 		</ocean>
 		<atmosphere>
-			<sun azimuth="120.0" elevation="50.0"/>
+			<sun azimuth="0" elevation="50.0"/>
 		</atmosphere>
 	</environment>
 	
@@ -60,7 +60,6 @@
 		<look name="duct" gray="0.1" roughness="0.4" metalness="0.5"/>
 		<look name="dark" rgb="0.2 0.15 0.1" roughness="0.6" metalness="0.8"/>
 		<look name="look" gray="0.3" roughness="0.4" metalness="0.5"/>
-		<!--<look name="look" rgb="0.2 0.15 0.1" roughness="0.6" metalness="0.8"/> -->
 		<look name="pipe" rgb="1.0 0.2 0.0" roughness="0.2" metalness="0.3"/>
 		<look name="pool" gray="0.0" roughness="0.1" texture="textures/dirty_tiles.jpg"/>
 		<look name="charuco_board" gray="0.0" roughness="0.1" texture="textures/dirty_tiles.jpg"/>
@@ -68,6 +67,7 @@
 		<look name="blue" gray="0.0" roughness="0.1" texture="textures/blue.jpg"/>
 		<look name="red" gray="0.0" roughness="0.1" texture="textures/red.jpg"/>
 		<look name="yellow" gray="0.0" roughness="0.1" texture="textures/yellow.jpg"/>
+		<look name="april"  gray="0.0" roughness="0.1" texture="textures/april.png"/>
 	</looks>
 	
 	
@@ -77,14 +77,10 @@
 		<world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 40.0"/>
 	</static>
 
-	
-
-	
-
 	<include file="scenarios/marty_auv.scn">
 		<arg name="robot_name" value="marty"/>
-		<arg name="robot_orientation" value="0.0 0.0 0.3"/>
-		<arg name="robot_position" value="-12 12.5 0"/>
+		<arg name="robot_orientation" value="0.0 0.0 0.0"/>
+		<arg name="robot_position" value="0 13 0"/>
 
 		<arg name="thrust_coeff_t100" value="1"/>
 		<arg name="thrust_coeff_t100_reverse" value="1"/>
@@ -105,20 +101,24 @@
 	</include>
 
 	<include file="scenarios/main_arena.scn">
-	<!-- change only x co-ordinate considering center of pool as the origin -->
-	<!-- may vary the x from -15 to 25 -->	
+		<!-- change only x co-ordinate considering center of pool as the origin -->
+		<!-- may vary the x from -15 to 25 -->	
 		<arg name="task_gate_coord" value="-12 -0.5 2"/>
 
-	<!-- may vary the x from -15 to 25 -->
-	<!-- may vary the y axis from 4.5 to 8.5 -->
-		<arg name="flare_coord" value="-12 5.0 2"/>
+		<!-- may vary the x from -15 to 25 -->
+		<!-- may vary the y axis from 4.5 to 8.5 -->
+		<arg name="avoid_flare_coord" value="-8 5.0 2"/>
 		
-	<!-- x may vary from -15 to 25 -->
-		<arg name="start_area_coord" value="-12 12.5 0"/>
+		<!-- x may vary from -15 to 25 -->
+		<arg name="start_area_coord" value="0 12.5 -0.1"/>
+	
+		<!-- may be anywhere -->
+		<arg name="red_flare_coord" value="-12 -4 2"/>
+		<arg name="blue_flare_coord" value="7 -10 2"/>
+		<arg name="yellow_flare_coord" value="20 -6 2"/>
 	</include>
 
 	<!-- include for qualification -->
-
 	<!-- <include file="scenarios/qualification_arena.scn">
 		<arg name="qual_gate_coord" value="0 0 1.8"/>
 	</include> -->
