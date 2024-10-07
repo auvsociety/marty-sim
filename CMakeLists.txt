@@ -6,7 +6,7 @@ find_package(catkin REQUIRED COMPONENTS
         rospy
         std_msgs
         geometry_msgs
-        rose_tvmc_msg
+        tvmc_msg
         message_generation
 )
 
@@ -14,12 +14,12 @@ generate_messages(
         DEPENDENCIES
         std_msgs
         geometry_msgs
-        rose_tvmc_msg
+        tvmc_msg
 )
 
 
 catkin_package(
-        CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs message_runtime rose_tvmc_msg
+        CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs message_runtime tvmc_msg
 )
 
 include_directories(
