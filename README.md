@@ -9,7 +9,7 @@ This package contains a translation layer that should work out of the box with o
 
 It should also output sensor data as expected by the system, along with a realistic amount of noise added on top.
 
-## Setup
+## Setup (Refer to the actual stonefish repo for better instructions)
 
 1. **Install Stonefish simulator:**
    ```bash
