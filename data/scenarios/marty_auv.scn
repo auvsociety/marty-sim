@@ -226,19 +226,19 @@
 
         <!-- ACTUATORS -->
 
-        <actuator name="lb-thruster" type="thruster">
+        <actuator name="lb-thruster" type="simple_thruster">
             <link name="Vehicle" />
-            <origin rpy="0.0 0.0 2.35619" xyz="0.159142 0.259859 0.037015" />
-            <specs thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
+            <specs max_setpoint="1" thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t100)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t100" />
                 <look name="propeller" />
             </propeller>
+            <origin rpy="0.0 0.0 2.35619" xyz="0.159142 0.259859 0.037015" />
         </actuator>
-        <actuator name="lf-thruster" type="thruster">
+        <actuator name="lf-thruster" type="simple_thruster">
             <link name="Vehicle" />
-            <specs thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
+            <specs max_setpoint="1" thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t100)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t100" />
@@ -246,9 +246,9 @@
             </propeller>
             <origin rpy="0.0 0.0 0.785398" xyz="0.159142 -0.272858 0.037015" />
         </actuator>
-        <actuator name="rb-thruster" type="thruster">
+        <actuator name="rb-thruster" type="simple_thruster">
             <link name="Vehicle" />
-            <specs thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
+            <specs max_setpoint="1" thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t100)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t100" />
@@ -256,9 +256,9 @@
             </propeller>
             <origin rpy="0.0 0.0 0.785398" xyz="-0.159142 0.259859 0.037015" />
         </actuator>
-        <actuator name="rf-thruster" type="thruster">
+        <actuator name="rf-thruster" type="simple_thruster">
             <link name="Vehicle" />
-            <specs thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
+            <specs max_setpoint="1" thrust_coeff="$(arg thrust_coeff_t100)" thrust_coeff_backward="$(arg thrust_coeff_t100_reverse)" torque_coeff="$(arg torque_coeff_t100)" max_rpm="$(arg max_rpm_t100)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t100)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t100" />
@@ -266,9 +266,9 @@
             </propeller>
             <origin rpy="0.0 0.0 2.35619" xyz="-0.159142 -0.272858 0.037015" />
         </actuator>
-        <actuator name="tl-thruster" type="thruster">
+        <actuator name="tl-thruster" type="simple_thruster">
             <link name="Vehicle" />
-            <specs thrust_coeff="$(arg thrust_coeff_t200)" thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)" torque_coeff="$(arg torque_coeff_t200)" max_rpm="$(arg max_rpm_t200)" inverted="true" />
+            <specs max_setpoint="1" thrust_coeff="$(arg thrust_coeff_t200)" thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)" torque_coeff="$(arg torque_coeff_t200)" max_rpm="$(arg max_rpm_t200)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t200)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t200" />
@@ -276,9 +276,9 @@
             </propeller>
             <origin rpy="0.0 -1.5708 0.0" xyz="0.176579 -0.142436 -0.162222" />
         </actuator>
-        <actuator name="tr-thruster" type="thruster">
+        <actuator name="tr-thruster" type="simple_thruster">
             <link name="Vehicle" />
-            <specs thrust_coeff="$(arg thrust_coeff_t200)" thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)" torque_coeff="$(arg torque_coeff_t200)" max_rpm="$(arg max_rpm_t200)" inverted="true" />
+            <specs max_setpoint="1" thrust_coeff="$(arg thrust_coeff_t200)" thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)" torque_coeff="$(arg torque_coeff_t200)" max_rpm="$(arg max_rpm_t200)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t200)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t200" />
@@ -286,9 +286,9 @@
             </propeller>
             <origin rpy="0.0 -1.5708 0.0" xyz="-0.176579 -0.142436 -0.162222" />
         </actuator>
-        <actuator name="tb-thruster" type="thruster">
+        <actuator name="tb-thruster" type="simple_thruster">
             <link name="Vehicle" />
-            <specs thrust_coeff="$(arg thrust_coeff_t200)" thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)" torque_coeff="$(arg torque_coeff_t200)" max_rpm="$(arg max_rpm_t200)" inverted="true" />
+            <specs max_setpoint="1" thrust_coeff="$(arg thrust_coeff_t200)" thrust_coeff_backward="$(arg thrust_coeff_t200_reverse)" torque_coeff="$(arg torque_coeff_t200)" max_rpm="$(arg max_rpm_t200)" inverted="true" />
             <propeller diameter="$(arg propeller_dia_t200)" right="true">
                 <mesh filename="meshes/propeller.obj" scale="0.5" />
                 <material name="plastic-t200" />

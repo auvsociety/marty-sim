@@ -77,7 +77,7 @@
 		<world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 40.0"/>
 	</static>
 
-	<include file="scenarios/marty_auv.scn">
+	<include file="scenarios/marty_auv1.scn">
 		<arg name="robot_name" value="marty"/>
 		<arg name="robot_orientation" value="0.0 0.0 0.0"/>
 		<arg name="robot_position" value="0 13 0"/>
@@ -85,16 +85,16 @@
 		<arg name="thrust_coeff_t100" value="1"/>
 		<arg name="thrust_coeff_t100_reverse" value="1"/>
 
-		<!-- <arg name="thrust_coeff_t100" value="0.89"/> -->
-		<!-- <arg name="thrust_coeff_t100_reverse" value="0.89"/> -->
-		<!-- <arg name="thrust_coeff_t100_reverse" value="0.625"/> -->
+		<arg name="thrust_coeff_t100" value="0.89"/>
+		<arg name="thrust_coeff_t100_reverse" value="0.89"/>
+		<arg name="thrust_coeff_t100_reverse" value="0.625"/>
 		<arg name="torque_coeff_t100" value="0.034"/>
 		<arg name="max_rpm_t100" value="2500"/>
 		<arg name="propeller_dia_t100" value="0.078"/>
 		
 		<arg name="thrust_coeff_t200" value="1.05"/>
 		<arg name="thrust_coeff_t200_reverse" value="1.05"/>
-		<!-- <arg name="thrust_coeff_t200_reverse" value="0.82"/> -->
+		<arg name="thrust_coeff_t200_reverse" value="0.82"/>
 		<arg name="torque_coeff_t200" value="0.04"/>
 		<arg name="max_rpm_t200" value="2994"/>
 		<arg name="propeller_dia_t200" value="0.078"/>

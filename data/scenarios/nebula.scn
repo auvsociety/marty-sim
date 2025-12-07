@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<scenario>
+    
+    <external_part name="Cube" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Cube.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Light" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Light.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="4.076 1.005 5.904" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Camera" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Camera.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="7.359 -6.926 4.958" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Shape_IndexedFaceSet" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Shape_IndexedFaceSet.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Shape_IndexedFaceSet_001" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Shape_IndexedFaceSet_001.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Shape_IndexedFaceSet_002" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Shape_IndexedFaceSet_002.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Shape_IndexedFaceSet_003" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Shape_IndexedFaceSet_003.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Shape_IndexedFaceSet_004" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Shape_IndexedFaceSet_004.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Shape_IndexedFaceSet_005" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Shape_IndexedFaceSet_005.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Shape_IndexedFaceSet_006" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Shape_IndexedFaceSet_006.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Shape_IndexedFaceSet_007" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Shape_IndexedFaceSet_007.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+
+    <external_part name="Shape_IndexedFaceSet_008" type="model" physics="submerged" buoyant="true">
+        <physical>
+            <mesh filename="meshes/Shape_IndexedFaceSet_008.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.000 0.000 0.000" />
+        </physical>
+        <material name="aluminium" />
+        <look name="look" />
+        <compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </external_part>
+</scenario>
